@@ -1,0 +1,1 @@
+Final social card target: 1200x630 JPEG, high quality, static asset.
