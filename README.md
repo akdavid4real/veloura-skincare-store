@@ -49,6 +49,8 @@ Local development uses `file:./server/data/veloura.db` automatically.
 
 The database schema and 20 starter products are created automatically on the first API request.
 
+Deployment trigger check: 2026-09-12.
+
 ## Product images
 
 Final product renders belong in:
