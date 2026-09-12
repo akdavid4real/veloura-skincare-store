@@ -1,0 +1,1 @@
+The production Open Graph image is 1200x630 JPEG and should be served from /og-preview.jpg.
