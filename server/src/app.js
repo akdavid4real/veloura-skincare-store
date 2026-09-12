@@ -2,12 +2,22 @@ import express from 'express'
 import cors from 'cors'
 import helmet from 'helmet'
 import db, { initDatabase } from './db.js'
+import { ogImageBuffer } from './og-image.js'
 
 const app = express()
 
 app.use(helmet({ crossOriginResourcePolicy: false }))
 app.use(cors({ origin: process.env.CLIENT_ORIGIN || true }))
 app.use(express.json({ limit: '100kb' }))
+
+app.get('/api/og-image.jpg', (_req, res) => {
+  res.set({
+    'Content-Type': 'image/jpeg',
+    'Content-Length': ogImageBuffer.length,
+    'Cache-Control': 'public, max-age=86400, s-maxage=86400',
+  })
+  res.send(ogImageBuffer)
+})
 
 app.use(async (_req, res, next) => {
   try {
